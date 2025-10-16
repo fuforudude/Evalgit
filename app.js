@@ -31,7 +31,7 @@ function renderBooks() {
       boutonsauvegarder.onclick = () => {
         const titre = input.value.trim();
         if (titre.length === 0) {
-          window.alert('Le titre ne peut pas être vide.');
+          window.alert('Le titre ne DOIT SURTOUT PAS être vide.');
           input.focus();
           return;
         }
