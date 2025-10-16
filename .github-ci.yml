@@ -1,0 +1,10 @@
+build-job:
+  stage: build
+  script:
+    - echo "Nom d'utilisateur GitHub : $GITHUB_ACTOR"
+
+test-job:
+  stage: test
+  script:
+    - echo "Branche actuelle : $GITHUB_REF_NAME"
+
