@@ -18,7 +18,30 @@ function renderBooks() {
     const editBtn = document.createElement('button');
     editBtn.textContent = "Modifier titre";
     editBtn.onclick = () => {
-      // Insérer ici le code pour modifier le titre du livre
+      const input = document.createElement('input');
+      input.type = 'text';
+      input.value = book.title;
+      input.style.width = '60%';
+
+      actionsTd.innerHTML = '';
+      actionsTd.appendChild(input);
+
+      const boutonsauvegarder = document.createElement('button');
+      boutonsauvegarder.textContent = "Enregistrer";
+      boutonsauvegarder.onclick = () => {
+        const titre = input.value.trim();
+        if (titre.length === 0) {
+          window.alert('Le titre ne peut pas être vide.');
+          input.focus();
+          return;
+        }
+        books[index].title = titre;
+        renderBooks();
+      };
+      actionsTd.appendChild(boutonsauvegarder);
+
+      input.focus();
+      input.select();
     };
     actionsTd.appendChild(editBtn);
 
